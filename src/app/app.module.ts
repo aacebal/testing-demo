@@ -5,13 +5,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { GreeterComponent } from './greeter/greeter.component';
 import { VoterComponent } from './voter/voter.component';
+import { TodosComponent } from './todos/todos.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     GreeterComponent,
-    VoterComponent
+    VoterComponent,
+    TodosComponent
   ],
   imports: [
     BrowserModule
