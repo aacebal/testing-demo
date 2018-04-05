@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { TodosComponent } from './todos.component';
 import { TodoService } from './todo.service';
+import { Observable } from 'rxjs';
 
 //NOTE: I've deliberately excluded this suite from running
 // because the test will fail. This is because we have not 
@@ -30,7 +31,7 @@ describe('TodosComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TodosComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+
   });
 
   it('should create', () => {
@@ -38,6 +39,12 @@ describe('TodosComponent', () => {
   });
 
   it('should load todos from the server', () => {
-    let service = TestBed.get(TodoService)
+    let service = TestBed.get(TodoService);
+    // let service = fixture.debugElement.injector.get(TodoService);
+    spyOn(service, 'getTodos').and.returnValue(Observable.from([[ 1, 2, 3 ]]));
+
+    fixture.detectChanges();
+
+    expect(component.todos.length).toBe(3);
   });
 });

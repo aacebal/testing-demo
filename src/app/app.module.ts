@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { GreeterComponent } from './greeter/greeter.component';
 import { VoterComponent } from './voter/voter.component';
 import { TodosComponent } from './todos/todos.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { TodosComponent } from './todos/todos.component';
     AppComponent,
     GreeterComponent,
     VoterComponent,
-    TodosComponent
+    TodosComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule
